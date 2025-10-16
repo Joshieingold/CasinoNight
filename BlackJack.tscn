@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://cqamp2174roaj"]
+
+[ext_resource type="Script" uid="uid://ddusyembos10a" path="res://card_manager.gd" id="1_5lb70"]
+[ext_resource type="Texture2D" uid="uid://ddos866bkuukm" path="res://back_card.png" id="2_11qed"]
+[ext_resource type="Script" uid="uid://crepevrkvu0tg" path="res://card.gd" id="3_11qed"]
+[ext_resource type="Texture2D" uid="uid://00rw4b3t2xk7" path="res://BlackJack.png" id="4_11qed"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mrrmw"]
+size = Vector2(32.000023, 48.00001)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CardManager" type="Node2D" parent="."]
+z_index = 1
+script = ExtResource("1_5lb70")
+
+[node name="Card" type="Sprite2D" parent="CardManager"]
+position = Vector2(589, 246.99997)
+scale = Vector2(4.187498, 3.916667)
+texture = ExtResource("2_11qed")
+script = ExtResource("3_11qed")
+
+[node name="Area2D" type="Area2D" parent="CardManager/Card"]
+position = Vector2(-26.666662, 83.999985)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CardManager/Card/Area2D"]
+position = Vector2(26.666664, -83.99997)
+scale = Vector2(0.9999998, 0.9999997)
+shape = SubResource("RectangleShape2D_mrrmw")
+
+[node name="Table" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Table"]
+position = Vector2(589.00006, 32)
+scale = Vector2(4.0083337, 3.9166667)
+texture = ExtResource("4_11qed")
+
+[node name="Camera2D" type="Camera2D" parent="Table/Sprite2D"]
+position = Vector2(0.3326416, 0.12765503)
+scale = Vector2(0.2494802, 0.25531915)
+
+[connection signal="mouse_entered" from="CardManager/Card/Area2D" to="CardManager/Card" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="CardManager/Card/Area2D" to="CardManager" method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_exited" from="CardManager/Card/Area2D" to="CardManager/Card" method="_on_area_2d_mouse_exited"]
