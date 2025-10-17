@@ -1,11 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://cqamp2174roaj"]
+[gd_scene load_steps=9 format=3 uid="uid://cqamp2174roaj"]
 
 [ext_resource type="Script" uid="uid://ddusyembos10a" path="res://card_manager.gd" id="1_5lb70"]
 [ext_resource type="Texture2D" uid="uid://ddos866bkuukm" path="res://Assets/Cards/back_card.png" id="2_11qed"]
 [ext_resource type="Script" uid="uid://crepevrkvu0tg" path="res://card.gd" id="3_11qed"]
+[ext_resource type="Texture2D" uid="uid://00rw4b3t2xk7" path="res://Assets/BlackJack.png" id="4_11qed"]
+[ext_resource type="Script" uid="uid://bmu863a463itc" path="res://deck.gd" id="5_2ryxw"]
+[ext_resource type="Script" uid="uid://cn7ptt7jyon23" path="res://input_manager.gd" id="6_40vqd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mrrmw"]
 size = Vector2(32.000023, 48.00001)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_40vqd"]
 
 [node name="BlackJack" type="Node2D"]
 
@@ -43,6 +48,36 @@ position = Vector2(0.23880196, 0)
 scale = Vector2(0.9999998, 0.9999997)
 shape = SubResource("RectangleShape2D_mrrmw")
 
-[connection signal="mouse_entered" from="CardManager/Card/Area2D" to="CardManager" method="_on_area_2d_mouse_entered"]
+[node name="Table" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Table"]
+z_as_relative = false
+position = Vector2(649, 362)
+scale = Vector2(4.0083337, 3.9166667)
+texture = ExtResource("4_11qed")
+
+[node name="Camera2D" type="Camera2D" parent="Table/Sprite2D"]
+position = Vector2(0.3326416, 0.12765503)
+scale = Vector2(0.2494802, 0.25531915)
+
+[node name="Deck" type="Node2D" parent="."]
+script = ExtResource("5_2ryxw")
+
+[node name="Sprite2D" type="Sprite2D" parent="Deck"]
+position = Vector2(1085.25, 137)
+scale = Vector2(3.6093748, 3.4166672)
+texture = ExtResource("2_11qed")
+
+[node name="Area2D" type="Area2D" parent="Deck"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Deck/Area2D"]
+shape = SubResource("RectangleShape2D_40vqd")
+
+[node name="InputManager" type="Node2D" parent="."]
+script = ExtResource("6_40vqd")
+
+[connection signal="mouse_entered" from="CardManager/Card/Area2D" to="CardManager/Card" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="CardManager/Card/Area2D" to="CardManager" method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_exited" from="CardManager/Card/Area2D" to="CardManager/Card" method="_on_area_2d_mouse_exited"]
 [connection signal="mouse_entered" from="CardManager/Card2/Area2D" to="CardManager/Card2" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="CardManager/Card2/Area2D" to="CardManager/Card2" method="_on_area_2d_mouse_exited"]

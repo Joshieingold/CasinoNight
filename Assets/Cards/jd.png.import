@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dx8sj3wemg6ig"
-path="res://.godot/imported/2D_TopDown_Tileset_Casino_640x512.png-74482f33f0bb306e369fc03b540b2de8.ctex"
+uid="uid://dp7akt87q6mml"
+path="res://.godot/imported/jd.png-3d73410fbe65caf51ba43d95a7e2846e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://2D_TopDown_Tileset_Casino_640x512.png"
-dest_files=["res://.godot/imported/2D_TopDown_Tileset_Casino_640x512.png-74482f33f0bb306e369fc03b540b2de8.ctex"]
+source_file="res://Assets/Cards/jd.png"
+dest_files=["res://.godot/imported/jd.png-3d73410fbe65caf51ba43d95a7e2846e.ctex"]
 
 [params]
 

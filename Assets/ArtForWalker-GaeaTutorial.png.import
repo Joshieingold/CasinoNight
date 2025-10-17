@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://00rw4b3t2xk7"
-path="res://.godot/imported/BlackJack.png-c1ddae2485ec05884f5de4568e72e67c.ctex"
+uid="uid://cdc4oc2wv4w0w"
+path="res://.godot/imported/ArtForWalker-GaeaTutorial.png-fe45d9804cbb9daa458b04905e492de4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://BlackJack.png"
-dest_files=["res://.godot/imported/BlackJack.png-c1ddae2485ec05884f5de4568e72e67c.ctex"]
+source_file="res://Assets/ArtForWalker-GaeaTutorial.png"
+dest_files=["res://.godot/imported/ArtForWalker-GaeaTutorial.png-fe45d9804cbb9daa458b04905e492de4.ctex"]
 
 [params]
 

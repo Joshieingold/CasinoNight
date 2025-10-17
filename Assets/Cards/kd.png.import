@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5yht0rux3sa8"
-path="res://.godot/imported/chris_template.png-64602c954136f81607163603a65105e7.ctex"
+uid="uid://c4e0ibhl4voa6"
+path="res://.godot/imported/kd.png-003a6a2e89c4c8d096eb6f1489dc71c6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://chris_template.png"
-dest_files=["res://.godot/imported/chris_template.png-64602c954136f81607163603a65105e7.ctex"]
+source_file="res://Assets/Cards/kd.png"
+dest_files=["res://.godot/imported/kd.png-003a6a2e89c4c8d096eb6f1489dc71c6.ctex"]
 
 [params]
 

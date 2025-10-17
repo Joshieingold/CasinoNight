@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ci7oxs85q6wnk"
-path="res://.godot/imported/shitty_blackjack_table_template.png-7358e60104e55f662052bd81146f6abf.ctex"
+uid="uid://ddos866bkuukm"
+path="res://.godot/imported/back_card.png-74949ceb89c4f0a646422e89ff50549b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://shitty_blackjack_table_template.png"
-dest_files=["res://.godot/imported/shitty_blackjack_table_template.png-7358e60104e55f662052bd81146f6abf.ctex"]
+source_file="res://Assets/Cards/back_card.png"
+dest_files=["res://.godot/imported/back_card.png-74949ceb89c4f0a646422e89ff50549b.ctex"]
 
 [params]
 

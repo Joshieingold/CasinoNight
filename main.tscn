@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" uid="uid://bfl26qxaxs3i4" path="res://character_body_2d.gd" id="1_h2yge"]
 [ext_resource type="Script" uid="uid://brunmodl74nmb" path="res://addons/gaea/generators/2D/walker_generator/walker_generator.gd" id="1_kek77"]
-[ext_resource type="Texture2D" uid="uid://b5yht0rux3sa8" path="res://chris_template.png" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://b5yht0rux3sa8" path="res://Assets/chris_template.png" id="2_0xm2m"]
 [ext_resource type="Script" uid="uid://bftsm3qejw6vc" path="res://addons/gaea/modifiers/2D/modifier_2d.gd" id="2_4c57u"]
 [ext_resource type="Script" uid="uid://c65o4qaluaqrg" path="res://addons/gaea/modifiers/2D/fill.gd" id="3_efxa6"]
 [ext_resource type="Script" uid="uid://ca1yddphgr3rm" path="res://addons/gaea/tile_info/tilemap_tile_info.gd" id="4_dg77c"]
 [ext_resource type="Script" uid="uid://bsjcwx26lcn6u" path="res://addons/gaea/modifiers/2D/walls.gd" id="5_4c57u"]
 [ext_resource type="Script" uid="uid://deuajdtblql0a" path="res://addons/gaea/generators/2D/walker_generator/walker_generator_settings.gd" id="5_ycdy4"]
 [ext_resource type="Script" uid="uid://d1vc7l0obwtls" path="res://addons/gaea/renderers/2D/tilemap_gaea_renderer.gd" id="6_w48qg"]
-[ext_resource type="Texture2D" uid="uid://cdc4oc2wv4w0w" path="res://ArtForWalker-GaeaTutorial.png" id="7_vivmo"]
+[ext_resource type="Texture2D" uid="uid://cdc4oc2wv4w0w" path="res://Assets/ArtForWalker-GaeaTutorial.png" id="7_vivmo"]
 
 [sub_resource type="Resource" id="Resource_4c57u"]
 script = ExtResource("4_dg77c")
