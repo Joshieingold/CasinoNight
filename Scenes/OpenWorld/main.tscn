@@ -1,6 +1,6 @@
 [gd_scene load_steps=33 format=4 uid="uid://bk2w1h6am6aft"]
 
-[ext_resource type="Script" uid="uid://bfl26qxaxs3i4" path="res://character_body_2d.gd" id="1_h2yge"]
+[ext_resource type="Script" uid="uid://bfl26qxaxs3i4" path="res://Scenes/OpenWorld/character_body_2d.gd" id="1_h2yge"]
 [ext_resource type="Script" uid="uid://brunmodl74nmb" path="res://addons/gaea/generators/2D/walker_generator/walker_generator.gd" id="1_kek77"]
 [ext_resource type="Texture2D" uid="uid://b5yht0rux3sa8" path="res://Assets/chris_template.png" id="2_0xm2m"]
 [ext_resource type="Script" uid="uid://bftsm3qejw6vc" path="res://addons/gaea/modifiers/2D/modifier_2d.gd" id="2_4c57u"]

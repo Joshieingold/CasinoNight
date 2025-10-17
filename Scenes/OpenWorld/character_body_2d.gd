@@ -9,7 +9,7 @@ func _physics_process(delta):
 	velocity = direction * max_speed;
 	move_and_slide();
 	if Input.is_action_pressed("play_slots"):
-		get_tree().change_scene_to_file("res://BlackJack.tscn")
+		get_tree().change_scene_to_file("res://Scenes/BlackJack/BlackJack.tscn")
 	if direction.length() > 0:
 		last_direction = direction;
 		PlayWalkAnimation(direction);
