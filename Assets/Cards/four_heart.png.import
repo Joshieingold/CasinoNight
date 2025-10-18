@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://togwd3sr4sks"
-path="res://.godot/imported/back_card.png-74949ceb89c4f0a646422e89ff50549b.ctex"
+uid="uid://bkkq3vrjfg0gc"
+path="res://.godot/imported/four_heart.png-c966613c57417c82ebd78f49dea76302.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Cards/back_card.png"
-dest_files=["res://.godot/imported/back_card.png-74949ceb89c4f0a646422e89ff50549b.ctex"]
+source_file="res://Assets/Cards/four_heart.png"
+dest_files=["res://.godot/imported/four_heart.png-c966613c57417c82ebd78f49dea76302.ctex"]
 
 [params]
 

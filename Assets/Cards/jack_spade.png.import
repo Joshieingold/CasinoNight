@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://togwd3sr4sks"
-path="res://.godot/imported/back_card.png-74949ceb89c4f0a646422e89ff50549b.ctex"
+uid="uid://dvoavnvosobq6"
+path="res://.godot/imported/jack_spade.png-15d6e6d7d34ebc247f09893e1dfd3eb3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Cards/back_card.png"
-dest_files=["res://.godot/imported/back_card.png-74949ceb89c4f0a646422e89ff50549b.ctex"]
+source_file="res://Assets/Cards/jack_spade.png"
+dest_files=["res://.godot/imported/jack_spade.png-15d6e6d7d34ebc247f09893e1dfd3eb3.ctex"]
 
 [params]
 

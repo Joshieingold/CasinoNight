@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://togwd3sr4sks"
-path="res://.godot/imported/back_card.png-74949ceb89c4f0a646422e89ff50549b.ctex"
+uid="uid://bntd0choluxs5"
+path="res://.godot/imported/queen_heart.png-fb6f946522d671bcf0dd7840d3c01b04.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Cards/back_card.png"
-dest_files=["res://.godot/imported/back_card.png-74949ceb89c4f0a646422e89ff50549b.ctex"]
+source_file="res://Assets/Cards/queen_heart.png"
+dest_files=["res://.godot/imported/queen_heart.png-fb6f946522d671bcf0dd7840d3c01b04.ctex"]
 
 [params]
 

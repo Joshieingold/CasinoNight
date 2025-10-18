@@ -4,6 +4,8 @@ extends Node2D
 signal hovered
 signal hovered_off
 
+var hand_position
+
 func _ready() -> void:
 	get_parent().ConnectCardSignals(self)
 	

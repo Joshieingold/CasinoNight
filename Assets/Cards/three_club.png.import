@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://togwd3sr4sks"
-path="res://.godot/imported/back_card.png-74949ceb89c4f0a646422e89ff50549b.ctex"
+uid="uid://dhbvr8oejbig"
+path="res://.godot/imported/three_club.png-94bde46bd2dd86cf5d99ad15e64bf74a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Cards/back_card.png"
-dest_files=["res://.godot/imported/back_card.png-74949ceb89c4f0a646422e89ff50549b.ctex"]
+source_file="res://Assets/Cards/three_club.png"
+dest_files=["res://.godot/imported/three_club.png-94bde46bd2dd86cf5d99ad15e64bf74a.ctex"]
 
 [params]
 

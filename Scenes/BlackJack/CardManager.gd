@@ -3,30 +3,24 @@ extends Node2D
 # Globals
 const COLLISION_MASK_CARD = 1
 const COLLISION_MASK_CARD_SLOT = 2
+const DEFAULT_CARD_MOVE_SPEED = 0.2
 
 var offset_pos = 0
 var card_being_dragged
 var screen_size
 var is_hovering_card
+var player_hand_reference
 
 #Godot Functions
 func _ready() -> void:
 	screen_size = get_viewport_rect().size
+	player_hand_reference = $"../PlayerHand"
+	$"../InputManager".connect("left_mouse_button_released", OnLeftClickReleased)
 
 func _process(delta: float) -> void:
 	if card_being_dragged:
 		var mouse_pos = get_global_mouse_position()
 		card_being_dragged.position = Vector2(clamp(mouse_pos.x, 0, screen_size.x),clamp(mouse_pos.y, 0, screen_size.y)) 
-
-func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		if event.is_action_pressed("left_click"):
-			# Check for card with raycast
-			var card = RaycastForCard()
-			if card:
-				StartDrag(card)
-		else:
-			FinishDrag()
 
 # Created Functions
 func RaycastForCard():
@@ -99,8 +93,15 @@ func FinishDrag():
 		card_being_dragged.scale = Vector2(1.05, 1.05)
 		var card_slot_found = RaycastForCardSlot()
 		if card_slot_found:
+			player_hand_reference.RemoveCardFromHand(card_being_dragged)
 			card_being_dragged.position.x = card_slot_found.position.x + offset_pos
 			card_being_dragged.position.y = card_slot_found.position.y
 			offset_pos += 50
 			card_being_dragged.get_node("Area2D/CollisionShape2D").disabled = true
+		else:
+			player_hand_reference.AddCardToHand(card_being_dragged, DEFAULT_CARD_MOVE_SPEED)
 		card_being_dragged = null 
+func OnLeftClickReleased():
+	if card_being_dragged:
+		FinishDrag()
+	
