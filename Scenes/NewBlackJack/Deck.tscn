@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://blhnicq04x7e8"]
+[gd_scene load_steps=4 format=3 uid="uid://blhnicq04x7e8"]
 
 [ext_resource type="Texture2D" uid="uid://togwd3sr4sks" path="res://Assets/Cards/back_card.png" id="1_huaoc"]
+[ext_resource type="Script" uid="uid://chk7mu8cjnt08" path="res://Scenes/NewBlackJack/Deck.gd" id="1_tornp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pxuoc"]
 size = Vector2(129, 192)
 
 [node name="Deck" type="Node2D"]
+script = ExtResource("1_tornp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-0.5, -3.8146973e-06)

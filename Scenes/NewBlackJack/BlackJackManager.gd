@@ -27,6 +27,7 @@ func CreateCard(card_name):
 	var new_card = card_scene.instantiate()
 	var card_image_path = str("res://Assets/Cards/" + card_name + ".png")
 	new_card.get_node("CardImage").texture = load(card_image_path)
+	new_card.position = $Deck.GetPositionTopCard()
 	new_card.name = card_name
 	return new_card
 
@@ -44,6 +45,7 @@ func Draw(destination):
 	destination.AddPos()
 	SetScores()
 	SetDeckText()
+	deck_node_reference.UpdateSize(deck.size())
 
 func Deal():
 	Draw(player_slot)
