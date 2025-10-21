@@ -1,5 +1,6 @@
 extends CharacterBody2D
 # CONSTANTS
+var chips = 5000
 var max_speed = 100;
 var last_direction = Vector2(1, 0);
 

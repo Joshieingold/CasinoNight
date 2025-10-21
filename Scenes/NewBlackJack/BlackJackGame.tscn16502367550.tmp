@@ -48,23 +48,6 @@ vertical_alignment = 1
 
 [node name="CardManager" type="Node2D" parent="GameManager"]
 
-[node name="Bet500" type="Button" parent="GameManager"]
-offset_left = 1584.0
-offset_top = 337.0
-offset_right = 1869.0
-offset_bottom = 468.0
-theme_override_font_sizes/font_size = 32
-text = "BET 500$"
-
-[node name="PlayerChips" type="RichTextLabel" parent="GameManager"]
-offset_top = 910.0
-offset_right = 365.0
-offset_bottom = 1079.0
-theme_override_font_sizes/normal_font_size = 32
-text = "5000"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="SlotManager" type="Node2D" parent="."]
 
 [node name="DealerSlot" parent="SlotManager" instance=ExtResource("3_7rf4w")]
@@ -81,7 +64,7 @@ offset_top = 823.0
 offset_right = 1852.0
 offset_bottom = 892.0
 theme_override_colors/font_outline_color = Color(0.8666667, 0, 0, 1)
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 34
 text = "HIT
 "
 
@@ -90,18 +73,38 @@ offset_left = 1633.0
 offset_top = 900.0
 offset_right = 1851.0
 offset_bottom = 969.0
-theme_override_font_sizes/font_size = 32
-text = "STAND"
 
 [node name="Double" type="Button" parent="ButtonManager"]
 offset_left = 1633.0
 offset_top = 976.0
 offset_right = 1851.0
 offset_bottom = 1045.0
-theme_override_font_sizes/font_size = 32
-text = "DOUBLE"
 
-[connection signal="pressed" from="GameManager/Bet500" to="GameManager" method="_on_bet_500_pressed"]
+[node name="Deal" type="Button" parent="ButtonManager"]
+offset_left = 129.0
+offset_top = 219.0
+offset_right = 513.0
+offset_bottom = 306.0
+theme_override_font_sizes/font_size = 32
+text = "DEAL"
+
+[node name="DealerDraw" type="Button" parent="ButtonManager"]
+offset_left = 129.0
+offset_top = 97.0
+offset_right = 516.0
+offset_bottom = 207.0
+theme_override_font_sizes/font_size = 32
+text = "DEALER DRAW"
+
+[node name="Reset" type="Button" parent="ButtonManager"]
+offset_left = 129.0
+offset_top = 321.0
+offset_right = 509.0
+offset_bottom = 410.0
+theme_override_font_sizes/font_size = 32
+text = "RESET"
+
 [connection signal="pressed" from="ButtonManager/Hit" to="GameManager" method="_on_hit_pressed"]
-[connection signal="pressed" from="ButtonManager/Stand" to="GameManager" method="_on_stand_pressed"]
-[connection signal="pressed" from="ButtonManager/Double" to="GameManager" method="_on_double_pressed"]
+[connection signal="pressed" from="ButtonManager/Deal" to="GameManager" method="_on_deal_pressed"]
+[connection signal="pressed" from="ButtonManager/DealerDraw" to="GameManager" method="_on_dealer_draw_pressed"]
+[connection signal="pressed" from="ButtonManager/Reset" to="GameManager" method="_on_reset_pressed"]

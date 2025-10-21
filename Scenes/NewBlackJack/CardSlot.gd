@@ -6,17 +6,18 @@ var hand_value = 0
 
 func _ready() -> void:
 	database_reference = preload("res://Scenes/NewBlackJack/Database.gd")
+	
 func AddPos():
 	card_offset_pos += 40
 
 func AddCard(card):
 	cards.insert(0, card)
 	print(cards)
-	hand_value = FindHandValue()
+	hand_value = GetHandValue()
 	print("you have: " + str(hand_value) + " points")
 	return
 
-func FindHandValue():
+func GetHandValue():
 	hand_value = 0
 	for card in cards:
 		var card_parts = card.split("_")
@@ -24,8 +25,8 @@ func FindHandValue():
 		if (database_reference.CARDS).has(value):
 			var points = database_reference.CARDS[value] 
 			hand_value += int(points)
-		
 	return hand_value
+	
 func Clear():
 	cards = []
 	hand_value = 0
