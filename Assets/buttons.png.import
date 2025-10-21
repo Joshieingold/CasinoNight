@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c128y6tgamvci"
-path="res://.godot/imported/BlackJack.png-7b465ab288a8a0f903f58058aac634c9.ctex"
+uid="uid://6j787fpkehv"
+path="res://.godot/imported/buttons.png-07ac6ee60a92314004250b3ee63b2e01.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/BlackJack.png"
-dest_files=["res://.godot/imported/BlackJack.png-7b465ab288a8a0f903f58058aac634c9.ctex"]
+source_file="res://Assets/buttons.png"
+dest_files=["res://.godot/imported/buttons.png-07ac6ee60a92314004250b3ee63b2e01.ctex"]
 
 [params]
 

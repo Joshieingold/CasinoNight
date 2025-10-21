@@ -17,7 +17,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func DrawCard():
+func DrawCard(destination):
 	var card_drawn_name = player_deck[0]
 	player_deck.erase(card_drawn_name)
 	if player_deck.size() == 0:
@@ -30,4 +30,7 @@ func DrawCard():
 	new_card.get_node("CardImage").texture = load(card_image_path)
 	$"../CardManager".add_child(new_card)
 	new_card.name = "Card"
-	$"../PlayerHand".AddCardToHand(new_card, card_draw_speed)
+	$"../CardSlotManager".AddCardToHand(new_card, destination, card_draw_speed)
+	
+	# $"../PlayerHand".AddCardToHand(new_card, card_draw_speed)
+	new_card.get_node("AnimationPlayer").play("card_flip")

@@ -1,0 +1,69 @@
+[gd_scene load_steps=4 format=3 uid="uid://cyp7v2rmgtkt8"]
+
+[ext_resource type="Script" uid="uid://bi0n5k6cm4bas" path="res://Scenes/BlackJack/UI.gd" id="1_d1fqg"]
+[ext_resource type="Texture2D" uid="uid://6j787fpkehv" path="res://Assets/buttons.png" id="2_b2a0g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5pva5"]
+size = Vector2(120.75, 43)
+
+[node name="UI" type="Node2D"]
+script = ExtResource("1_d1fqg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(44.500004, -22.5)
+scale = Vector2(3.7812502, 3.0625)
+texture = ExtResource("2_b2a0g")
+
+[node name="HitButton" type="Area2D" parent="."]
+
+[node name="hit_collision" type="CollisionShape2D" parent="HitButton"]
+z_index = 7
+z_as_relative = false
+position = Vector2(44.5, -75)
+shape = SubResource("RectangleShape2D_5pva5")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HitButton"]
+offset_left = -8.0
+offset_top = -92.0
+offset_right = 98.0
+offset_bottom = -57.0
+theme_override_font_sizes/normal_font_size = 16
+text = "Hit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StandButton" type="Area2D" parent="."]
+
+[node name="stand_collision" type="CollisionShape2D" parent="StandButton"]
+z_index = 6
+z_as_relative = false
+position = Vector2(44.75, -22.5)
+shape = SubResource("RectangleShape2D_5pva5")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="StandButton"]
+offset_left = -8.0
+offset_top = -41.0
+offset_right = 98.0
+offset_bottom = -6.0
+theme_override_font_sizes/normal_font_size = 16
+text = "Stand"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DoubleButton" type="Area2D" parent="."]
+
+[node name="double_collision" type="CollisionShape2D" parent="DoubleButton"]
+z_index = 5
+z_as_relative = false
+position = Vector2(44.625, 29)
+shape = SubResource("RectangleShape2D_5pva5")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DoubleButton"]
+offset_left = -9.0
+offset_top = 11.0
+offset_right = 97.0
+offset_bottom = 46.0
+theme_override_font_sizes/normal_font_size = 16
+text = "Double Up"
+horizontal_alignment = 1
+vertical_alignment = 1

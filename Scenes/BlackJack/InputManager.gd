@@ -4,13 +4,18 @@ signal left_mouse_button_released
 
 const COLLISION_MASK_CARD = 1
 const COLLISION_MASK_DECK = 4
+const COLLISION_MASK_HIT = 7
+const COLLISION_MASK_STAND = 6
+const COLLISION_MASK_DOUBLE = 5
 
 var card_manager_reference
 var deck_reference
+var game_manager_reference
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	card_manager_reference = $"../CardManager"
 	deck_reference = $"../Deck"
+	game_manager_reference = $"../GameManager"
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -36,6 +41,10 @@ func RaycastAtCursor():
 			if card_found:
 				card_manager_reference.StartDrag(card_found)
 		elif result_collision_mask == COLLISION_MASK_DECK:
-			deck_reference.DrawCard()
-			
-			
+			game_manager_reference.OnDeal()
+		elif result_collision_mask == COLLISION_MASK_HIT:
+			game_manager_reference.DealCardToPlayer()
+		elif result_collision_mask == COLLISION_MASK_STAND:
+			pass
+		elif result_collision_mask == COLLISION_MASK_DOUBLE:
+			pass

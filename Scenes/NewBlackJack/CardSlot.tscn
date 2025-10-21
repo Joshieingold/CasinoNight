@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7q8alx38y6tw"]
+
+[ext_resource type="Texture2D" uid="uid://dvjj8xneyxm05" path="res://Assets/CardSlot.png" id="1_8ubxq"]
+[ext_resource type="Script" uid="uid://ccwtid6jbg3b5" path="res://Scenes/NewBlackJack/CardSlot.gd" id="1_i4ygw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i4ygw"]
+size = Vector2(151.5, 215.5)
+
+[node name="CardSlot" type="Node2D"]
+script = ExtResource("1_i4ygw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("1_8ubxq")
+
+[node name="SlotLocation" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SlotLocation"]
+position = Vector2(0.25, 0.25)
+shape = SubResource("RectangleShape2D_i4ygw")

@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://cayc64dhoqcuv"]
+
+[ext_resource type="Script" uid="uid://c6lkdkhkie3oc" path="res://Scenes/NewBlackJack/UI.gd" id="1_1fvnx"]
+[ext_resource type="Texture2D" uid="uid://dqgxq7rviljk5" path="res://Assets/button_one.png" id="1_8adjo"]
+
+[node name="UserInterface" type="Node2D"]
+position = Vector2(338, 26)
+script = ExtResource("1_1fvnx")
+
+[node name="HitButton" type="Node2D" parent="."]
+
+[node name="HIT" type="Button" parent="HitButton"]
+offset_left = -515.0
+offset_top = -206.0
+offset_right = -224.0
+offset_bottom = -105.0
+
+[node name="Sprite2D" type="Sprite2D" parent="HitButton"]
+position = Vector2(31.999996, 28.999998)
+scale = Vector2(10.328126, 8.428572)
+texture = ExtResource("1_8adjo")
+
+[node name="StandButton" type="Node2D" parent="."]
+
+[node name="STAND" type="Button" parent="StandButton"]
+offset_left = -515.0
+offset_top = -66.0
+offset_right = -224.0
+offset_bottom = 35.0
+
+[node name="Sprite2D" type="Sprite2D" parent="StandButton"]
+position = Vector2(270.99997, -253)
+scale = Vector2(10.328126, 8.428572)
+texture = ExtResource("1_8adjo")
+
+[node name="DoubleButton" type="Node2D" parent="."]
+
+[node name="DOUBLE" type="Button" parent="DoubleButton"]
+offset_left = -524.0
+offset_top = 65.0
+offset_right = -194.0
+offset_bottom = 166.0
+
+[node name="Sprite2D" type="Sprite2D" parent="DoubleButton"]
+position = Vector2(-6.999999, 147.99998)
+scale = Vector2(10.328126, 8.428572)
+texture = ExtResource("1_8adjo")
+
+[connection signal="pressed" from="HitButton/HIT" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="HitButton/HIT" to="HitButton" method="_on_button_pressed"]
+[connection signal="pressed" from="StandButton/STAND" to="StandButton" method="_on_button_pressed"]
+[connection signal="pressed" from="DoubleButton/DOUBLE" to="DoubleButton" method="_on_button_pressed"]

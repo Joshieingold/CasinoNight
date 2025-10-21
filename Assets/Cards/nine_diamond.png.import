@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c128y6tgamvci"
-path="res://.godot/imported/BlackJack.png-7b465ab288a8a0f903f58058aac634c9.ctex"
+uid="uid://bn4gwxtgh4urk"
+path="res://.godot/imported/nine_diamond.png-5bd56c122095e093f26266a16b9db6bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/BlackJack.png"
-dest_files=["res://.godot/imported/BlackJack.png-7b465ab288a8a0f903f58058aac634c9.ctex"]
+source_file="res://Assets/Cards/nine_diamond.png"
+dest_files=["res://.godot/imported/nine_diamond.png-5bd56c122095e093f26266a16b9db6bd.ctex"]
 
 [params]
 

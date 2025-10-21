@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://blhnicq04x7e8"]
+
+[ext_resource type="Texture2D" uid="uid://togwd3sr4sks" path="res://Assets/Cards/back_card.png" id="1_huaoc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pxuoc"]
+size = Vector2(129, 192)
+
+[node name="Deck" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-0.5, -3.8146973e-06)
+scale = Vector2(4.03125, 4)
+texture = ExtResource("1_huaoc")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-0.49998474, 0)
+shape = SubResource("RectangleShape2D_pxuoc")

@@ -1,0 +1,110 @@
+[gd_scene load_steps=5 format=3 uid="uid://da5lbb1hygycs"]
+
+[ext_resource type="Texture2D" uid="uid://c128y6tgamvci" path="res://Assets/BlackJack.png" id="1_uw2b5"]
+[ext_resource type="Script" uid="uid://cmohbm1q7g6wr" path="res://Scenes/NewBlackJack/BlackJackManager.gd" id="2_sptxt"]
+[ext_resource type="PackedScene" uid="uid://c7q8alx38y6tw" path="res://Scenes/NewBlackJack/CardSlot.tscn" id="3_7rf4w"]
+[ext_resource type="PackedScene" uid="uid://blhnicq04x7e8" path="res://Scenes/NewBlackJack/Deck.tscn" id="3_v7svo"]
+
+[node name="BlackJackGame" type="Node2D"]
+
+[node name="BlackJack" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(960, 540)
+scale = Vector2(6, 6.0000005)
+texture = ExtResource("1_uw2b5")
+
+[node name="GameManager" type="Node2D" parent="."]
+script = ExtResource("2_sptxt")
+
+[node name="Deck" parent="GameManager" instance=ExtResource("3_v7svo")]
+position = Vector2(1692, 153)
+
+[node name="DeckTotal" type="RichTextLabel" parent="GameManager/Deck"]
+offset_left = -65.0
+offset_top = 96.0
+offset_right = 64.0
+offset_bottom = 134.0
+text = "52/52"
+
+[node name="DealerScore" type="RichTextLabel" parent="GameManager"]
+offset_left = 868.0
+offset_top = 269.0
+offset_right = 1020.0
+offset_bottom = 322.0
+text = "House Score:
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerScore" type="RichTextLabel" parent="GameManager"]
+offset_left = 868.0
+offset_top = 748.0
+offset_right = 1020.0
+offset_bottom = 796.0
+text = "Your Score:
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CardManager" type="Node2D" parent="GameManager"]
+
+[node name="SlotManager" type="Node2D" parent="."]
+
+[node name="DealerSlot" parent="SlotManager" instance=ExtResource("3_7rf4w")]
+position = Vector2(944, 161)
+
+[node name="PlayerSlot" parent="SlotManager" instance=ExtResource("3_7rf4w")]
+position = Vector2(944, 904)
+
+[node name="ButtonManager" type="Node2D" parent="."]
+
+[node name="Hit" type="Button" parent="ButtonManager"]
+offset_left = 1634.0
+offset_top = 823.0
+offset_right = 1852.0
+offset_bottom = 892.0
+theme_override_colors/font_outline_color = Color(0.8666667, 0, 0, 1)
+theme_override_font_sizes/font_size = 34
+text = "HIT
+"
+
+[node name="Stand" type="Button" parent="ButtonManager"]
+offset_left = 1633.0
+offset_top = 900.0
+offset_right = 1851.0
+offset_bottom = 969.0
+
+[node name="Double" type="Button" parent="ButtonManager"]
+offset_left = 1633.0
+offset_top = 976.0
+offset_right = 1851.0
+offset_bottom = 1045.0
+
+[node name="Deal" type="Button" parent="ButtonManager"]
+offset_left = 129.0
+offset_top = 219.0
+offset_right = 513.0
+offset_bottom = 306.0
+theme_override_font_sizes/font_size = 32
+text = "DEAL"
+
+[node name="DealerDraw" type="Button" parent="ButtonManager"]
+offset_left = 129.0
+offset_top = 97.0
+offset_right = 516.0
+offset_bottom = 207.0
+theme_override_font_sizes/font_size = 32
+text = "DEALER DRAW"
+
+[node name="Reset" type="Button" parent="ButtonManager"]
+offset_left = 129.0
+offset_top = 321.0
+offset_right = 509.0
+offset_bottom = 410.0
+theme_override_font_sizes/font_size = 32
+text = "RESET"
+
+[connection signal="pressed" from="ButtonManager/Hit" to="GameManager" method="_on_hit_pressed"]
+[connection signal="pressed" from="ButtonManager/Deal" to="GameManager" method="_on_deal_pressed"]
+[connection signal="pressed" from="ButtonManager/DealerDraw" to="GameManager" method="_on_dealer_draw_pressed"]
+[connection signal="pressed" from="ButtonManager/Reset" to="GameManager" method="_on_reset_pressed"]

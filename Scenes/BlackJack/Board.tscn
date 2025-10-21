@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://cy6ifsr61jabv"]
+
+[ext_resource type="Texture2D" uid="uid://c128y6tgamvci" path="res://Assets/BlackJack.png" id="1_llldr"]
+
+[node name="Board" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -3
+position = Vector2(379, 219.99998)
+scale = Vector2(2.3750002, 2.4333334)
+texture = ExtResource("1_llldr")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0

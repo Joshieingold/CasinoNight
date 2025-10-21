@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://45n1y5wn6wh1" path="res://Scenes/BlackJack/Deck.gd" id="4_y7qse"]
 [ext_resource type="Script" uid="uid://cu26q4s1ec6b" path="res://Scenes/BlackJack/InputManager.gd" id="6_lx7k2"]
 [ext_resource type="PackedScene" uid="uid://cy6ifsr61jabv" path="res://Scenes/BlackJack/Board.tscn" id="7_lx7k2"]
-[ext_resource type="PackedScene" uid="uid://cyp7v2rmgtkt8" path="res://Scenes/BlackJack/UI.tscn" id="10_kgb8q"]
+[ext_resource type="Script" uid="uid://bi0n5k6cm4bas" path="res://Scenes/BlackJack/UI.gd" id="9_kgb8q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jc4xm"]
 size = Vector2(81, 127.75)
@@ -68,5 +68,5 @@ metadata/_edit_use_anchors_ = true
 [node name="Board" parent="." instance=ExtResource("7_lx7k2")]
 position = Vector2(-2, 1)
 
-[node name="UI" parent="." instance=ExtResource("10_kgb8q")]
-position = Vector2(639, 378)
+[node name="UI" type="Node2D" parent="."]
+script = ExtResource("9_kgb8q")
