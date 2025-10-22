@@ -18,10 +18,10 @@ const CARD_SCENE_PATH = "res://Scenes/NewBlackJack/card.tscn"
 func _ready() -> void:
 	player_slot = $"../SlotManager/PlayerSlot"
 	dealer_slot = $"../SlotManager/DealerSlot"
-	deck.shuffle()
-	card_scene = preload(CARD_SCENE_PATH)
 	deck_node_reference = $Deck
 	ChangeButtonsZ(-2)
+	await ShuffleDeck()
+	card_scene = preload(CARD_SCENE_PATH)
 
 func CreateCard(card_name):
 	var new_card = card_scene.instantiate()
@@ -32,21 +32,36 @@ func CreateCard(card_name):
 	return new_card
 
 func Draw(destination):
-	await get_tree().create_timer(0.2).timeout
-	var card = deck[0]
-	destination.AddCard(card)
-	deck.erase(deck[0])
-	var card_node = CreateCard(card)
-	$CardManager.add_child(card_node)
-	card_node.position = deck_node_reference.position
-	card_node.z_index = 12
-	AnimateCardToPosition(card_node, Vector2(destination.position.x + destination.card_offset_pos,destination.position.y), 0.4)
-	card_node.get_node("AnimationPlayer").play("new_card_flip")
-	destination.AddPos()
-	SetScores()
-	SetDeckText()
-	deck_node_reference.UpdateSize(deck.size())
+	if deck.size() == 0:
+		await ShuffleDeck()
+		Draw(destination)
+	else:
+		await get_tree().create_timer(0.2).timeout
+		var card = deck[0]
+		destination.AddCard(card)
+		deck.erase(deck[0])
+		var card_node = CreateCard(card)
+		$CardManager.add_child(card_node)
+		card_node.position = deck_node_reference.position
+		card_node.z_index = 12
+		AnimateCardToPosition(card_node, Vector2(destination.position.x + destination.card_offset_pos,destination.position.y), 0.4)
+		card_node.get_node("AnimationPlayer").play("new_card_flip")
+		destination.AddPos()
+		SetScores()
+		SetDeckText()
+		deck_node_reference.UpdateSize(deck.size())
 
+func ShuffleDeck():
+	deck = CreateDeck()
+	deck.shuffle()
+	deck_node_reference.get_node("Sprite2D").visible = false
+	deck_node_reference.show_deck = false
+	deck_node_reference.UpdateSize(deck.size())
+	await deck_node_reference.PlayRiffleShuffle()
+	deck_node_reference.get_node("Sprite2D").visible = true
+	deck_node_reference.show_deck = true
+	deck_node_reference.UpdateSize(deck.size())
+	
 func Deal():
 	Draw(player_slot)
 	Draw(dealer_slot)
@@ -57,6 +72,7 @@ func Deal():
 	else:
 		game_state_index = 1
 		if player_slot.hand_value == 21:
+			game_state_index = 2
 			HandleShowdown()
 		else:
 			ChangeButtonsZ(2)
@@ -84,6 +100,8 @@ func HandleShowdown():
 	game_state_index = 3
 	while dealer_slot.hand_value < 17:
 		await Draw(dealer_slot)
+	if CheckBust(player_slot.hand_value):
+		CleanUp("player_lose")
 	if CheckBust(dealer_slot.hand_value):
 		CleanUp("player_win")
 	else:
@@ -114,8 +132,10 @@ func _on_hit_pressed() -> void:
 		Draw(player_slot)
 		await get_tree().create_timer(1.5).timeout
 		if CheckBust(player_slot.hand_value):
-			await get_tree().create_timer(1.5).timeout
 			CleanUp("player_lose")
+		elif player_slot.hand_value == 21:
+			HandleShowdown()
+			
 
 func _on_double_pressed() -> void:
 	game_state_index = 2
@@ -172,3 +192,7 @@ func SetDeckText():
 	
 func UpdateChips():
 	$PlayerChips.text = str(player_chips)
+
+
+func _on_button_pressed() -> void:
+	ShuffleDeck()
